@@ -29,4 +29,21 @@ public class CountryFinderService {
 		}
 		return cityCountryMapper;
 	}
+	
+	public void addCaptialAndCountry(CityCountryMapper cityCountry){
+		cityCountryMap.put(cityCountry.getCityName(),cityCountry.getCountryName());
+	}
+	
+	public boolean deleteCapitalCountryRecord(String cityName){
+		
+		boolean success = true;
+		
+		if(!cityCountryMap.containsKey(cityName)){
+			return !success;
+		}
+		
+		cityCountryMap.remove(cityName);
+		return success;
+	}
+	
 }

@@ -3,9 +3,12 @@ package com.test.vipul.springboot.model;
 public class CityCountryMapper {
 
 	
-	private final String cityName ;
+	private String cityName ;
 	
-	private final String countryName ;
+	private  String countryName ;
+	
+	public CityCountryMapper(){
+	}
 	
 	public CityCountryMapper(String _cityName , String _countryName){
 		this.cityName = _cityName ;
@@ -21,5 +24,14 @@ public class CityCountryMapper {
 		return countryName;
 	}
 	
+	
+	public void setCityName(String _cityName){
+		this.cityName = _cityName;
+		
+	}
+	
+	public void setCountryName(String _countryName){
+		this.countryName = _countryName ;
+	}
 	
 }

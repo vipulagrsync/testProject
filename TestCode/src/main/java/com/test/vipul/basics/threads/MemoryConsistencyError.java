@@ -4,7 +4,7 @@ public class MemoryConsistencyError {
 
 	private static volatile boolean sayHello = false;
 
-    public static void main(String[] args) throws InterruptedException {
+    public static void main1(String[] args) throws InterruptedException {
 
         Thread thread = new Thread(() -> {
            while(!sayHello) {
