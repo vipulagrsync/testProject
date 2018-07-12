@@ -34,6 +34,17 @@ public class CountryFinderService {
 		cityCountryMap.put(cityCountry.getCityName(),cityCountry.getCountryName());
 	}
 	
+	public boolean updateCaptialAndCountry(CityCountryMapper cityCountry){
+		boolean success = true;
+		if(!cityCountryMap.containsKey(cityCountry.getCityName())){
+			return false;
+		}
+		
+		cityCountryMap.put(cityCountry.getCityName(),cityCountry.getCountryName());
+		return success;
+	}
+	
+	
 	public boolean deleteCapitalCountryRecord(String cityName){
 		
 		boolean success = true;
