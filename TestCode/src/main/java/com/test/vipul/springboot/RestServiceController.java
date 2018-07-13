@@ -1,5 +1,8 @@
 package com.test.vipul.springboot;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -16,14 +19,14 @@ import com.test.vipul.springboot.restservice.CountryFinderService;
 @RestController
 public class RestServiceController {
 
-	private CountryFinderService countryService ;
+	private static final Logger logger = LoggerFactory.getLogger(GracefulShutdown.class);
 	
-	public RestServiceController(){
-		countryService = new CountryFinderService();
-	}
+	@Autowired
+	private CountryFinderService countryService ;
+
 	@RequestMapping(path = "/getCountryOfCapital" ,  method = RequestMethod.GET)
 	public CityCountryMapper getCountryForCapitol(@RequestParam(value="cityName")String cityName){
-		
+		logger.info(" starting to get a country for capital name " + cityName);
 		return countryService.getCountryNameFromCity(cityName);
 		//172.20.220.128
 	}

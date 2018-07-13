@@ -2,9 +2,10 @@ package com.test.vipul.springboot.restservice;
 
 import java.util.HashMap;
 import java.util.Map;
-
+import org.springframework.stereotype.Service;
 import com.test.vipul.springboot.model.CityCountryMapper;
 
+@Service
 public class CountryFinderService {
 
 	
